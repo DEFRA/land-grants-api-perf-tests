@@ -12,6 +12,7 @@ fi
 JM_SCENARIOS=${JM_HOME}/scenarios
 JM_REPORTS=${JM_HOME}/reports
 JM_LOGS=${JM_HOME}/logs
+JM_DATA=${JM_HOME}/data
 
 mkdir -p ${JM_REPORTS} ${JM_LOGS}
 
@@ -30,9 +31,11 @@ SERVICE_URL_SCHEME=${SERVICE_URL_SCHEME:-https}
 # Run the test suite
 jmeter -n -t ${SCENARIOFILE} -e -l "${REPORTFILE}" -o ${JM_REPORTS} -j ${LOGFILE} -f \
 -Jenv="${ENVIRONMENT}" \
--Jdomain="${SERVICE_ENDPOINT}" \
--Jport="${SERVICE_PORT}" \
--Jprotocol="${SERVICE_URL_SCHEME}"
+-Jcsv_path="${JM_DATA}" \
+-Jauthorization="${AUTHORIZATION}" \
+-Juser_count="${USER_COUNT}" \
+-Jramp_up_period_seconds="${RAMP_UP_PERIOD_SECONDS}" \
+-Jduration_seconds="${DURATION_SECONDS}"
 
 # Publish the results into S3 so they can be displayed in the CDP Portal
 if [ -n "$RESULTS_OUTPUT_S3_PATH" ]; then

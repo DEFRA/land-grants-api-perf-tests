@@ -1,9 +1,13 @@
 # land-grants-api-perf-tests
 
-A JMeter based test runner for the CDP Platform.
+This is the performance test suite for land-grants-api maintained by specialised-grants-services team.
 
-- [Licence](#licence)
-  - [About the licence](#about-the-licence)
+## land-grants-api performance tests:
+There are tests for land-grants-api that:
+ - Run for a specified duration using a defined number of concurrent threads
+ - Gradually ramp up the threads over a configured ramp-up period
+ - Verify that all requests return an HTTP 200 OK response
+ - Ensure the average response time remains below 3000 ms
 
 ## Build
 
