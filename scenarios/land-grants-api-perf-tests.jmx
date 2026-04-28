@@ -43,7 +43,7 @@
           </elementProp>
           <elementProp name="" elementType="Header">
             <stringProp name="Header.name">Authorization</stringProp>
-            <stringProp name="Header.value">${authorization}</stringProp>
+            <stringProp name="Header.value">Bearer ${authorization}</stringProp>
           </elementProp>
         </collectionProp>
       </HeaderManager>
@@ -68,7 +68,7 @@
         </collectionProp>
       </Arguments>
       <hashTree/>
-      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables required to run on cdp">
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables required to run on cdp" enabled="false">
         <collectionProp name="Arguments.arguments">
           <elementProp name="api_base_url" elementType="Argument">
             <stringProp name="Argument.name">api_base_url</stringProp>
@@ -114,7 +114,7 @@
         </collectionProp>
       </Arguments>
       <hashTree/>
-      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables required to run locally" enabled="false">
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables required to run locally">
         <collectionProp name="Arguments.arguments">
           <elementProp name="api_base_url" elementType="Argument">
             <stringProp name="Argument.name">api_base_url</stringProp>
@@ -124,19 +124,19 @@
           </elementProp>
           <elementProp name="csv_path" elementType="Argument">
             <stringProp name="Argument.name">csv_path</stringProp>
-            <stringProp name="Argument.value"></stringProp>
+            <stringProp name="Argument.value">/Users/naraharimiriyala/defra-repos/land-grants-api-perf-tests/data</stringProp>
             <stringProp name="Argument.desc"></stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="xApiKey" elementType="Argument">
             <stringProp name="Argument.name">xApiKey</stringProp>
-            <stringProp name="Argument.value"></stringProp>
+            <stringProp name="Argument.value">U61z7fUz94EaeptSnLI49McdodPVADbK</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
             <stringProp name="Argument.desc"></stringProp>
           </elementProp>
           <elementProp name="authorization" elementType="Argument">
             <stringProp name="Argument.name">authorization</stringProp>
-            <stringProp name="Argument.value"></stringProp>
+            <stringProp name="Argument.value">N2d4YllCSmpLc2FTUVEwWjo0enJyYzZ6VTc1aWU2ZWxiMk1kRjBnPT06TnpBVDV3dCtXWktKLzVRV05aY29UOThITUFWcW95SWxDUGN5bzc3Ri81c0ZYZ1FiZ3pUdDBOeEZ6U1IyWi83OHFzUWE0UlN5d2JYSklxdHYvUzYycmc9PQ==</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="parcels_endpoint" elementType="Argument">
@@ -168,7 +168,7 @@
         <stringProp name="TestPlan.comments">**************Disable when pushing to github*********************</stringProp>
       </Arguments>
       <hashTree/>
-      <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager required to run locally" enabled="false">
+      <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager required to run locally">
         <collectionProp name="HeaderManager.headers">
           <elementProp name="" elementType="Header">
             <stringProp name="Header.name">x-api-key</stringProp>
