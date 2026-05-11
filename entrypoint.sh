@@ -28,13 +28,19 @@ SERVICE_PORT=${SERVICE_PORT:-443}
 SERVICE_URL_SCHEME=${SERVICE_URL_SCHEME:-https}
 
 # Run the test suite
+set +x
+echo "authorization=${AUTHORIZATION}" > ./jmeter.properties
+set -x
+
 jmeter -n -t ${SCENARIOFILE} -e -l "${REPORTFILE}" -o ${JM_REPORTS} -j ${LOGFILE} -f \
--q ./jmeter.properties \
--Jenv="${ENVIRONMENT}" \
--Jcsv_path="${JM_DATA}" \
--Juser_count="${USER_COUNT}" \
--Jramp_up_period_seconds="${RAMP_UP_PERIOD_SECONDS}" \
--Jduration_seconds="${DURATION_SECONDS}"
+  -q ./jmeter.properties \
+  -Jenv="${ENVIRONMENT}" \
+  -Jcsv_path="${JM_DATA}" \
+  -Juser_count="${USER_COUNT}" \
+  -Jramp_up_period_seconds="${RAMP_UP_PERIOD_SECONDS}" \
+  -Jduration_seconds="${DURATION_SECONDS}"
+
+rm -f ./jmeter.properties
 
 # Publish the results into S3 so they can be displayed in the CDP Portal
 if [ -n "$RESULTS_OUTPUT_S3_PATH" ]; then
