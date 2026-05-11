@@ -29,9 +29,9 @@ SERVICE_URL_SCHEME=${SERVICE_URL_SCHEME:-https}
 
 # Run the test suite
 jmeter -n -t ${SCENARIOFILE} -e -l "${REPORTFILE}" -o ${JM_REPORTS} -j ${LOGFILE} -f \
+-q ./jmeter.properties \
 -Jenv="${ENVIRONMENT}" \
 -Jcsv_path="${JM_DATA}" \
--Jauthorization="${AUTHORIZATION}" \
 -Juser_count="${USER_COUNT}" \
 -Jramp_up_period_seconds="${RAMP_UP_PERIOD_SECONDS}" \
 -Jduration_seconds="${DURATION_SECONDS}"
